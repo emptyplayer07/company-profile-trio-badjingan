@@ -1,0 +1,98 @@
+---
+import Container from "../common/Container.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Web Development",
+    description:
+      "Modern, responsive, and scalable websites designed to support your business."
+  },
+  {
+    number: "02",
+    title: "Mobile Development",
+    description:
+      "High-quality mobile applications for Android and iOS platforms."
+  },
+  {
+    number: "03",
+    title: "UI/UX Design",
+    description:
+      "User-centered interfaces that provide simple and engaging experiences."
+  },
+  {
+    number: "04",
+    title: "Cloud Solutions",
+    description:
+      "Reliable cloud infrastructure and solutions built for scalability."
+  },
+  {
+    number: "05",
+    title: "IT Consulting",
+    description:
+      "Technology strategies that align your IT infrastructure with business goals."
+  },
+  {
+    number: "06",
+    title: "Digital Transformation",
+    description:
+      "Helping organizations adopt technology and improve their digital processes."
+  }
+];
+---
+
+<section id="services" class="bg-base-100 py-24 lg:py-32">
+  <Container>
+
+    <div class="mx-auto max-w-2xl text-center">
+
+      <span class="text-sm font-semibold uppercase tracking-widest text-primary">
+        Our Services
+      </span>
+
+      <h2 class="mt-4 text-4xl font-bold lg:text-5xl">
+        Technology solutions
+        <span class="text-primary">built for you</span>
+      </h2>
+
+      <p class="mt-6 text-base-content/60">
+        From strategy to implementation, we provide the
+        technology expertise your business needs.
+      </p>
+
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      {services.map((service) => (
+        <article
+          class="group rounded-3xl border border-base-200 bg-base-100 p-8 transition duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl"
+        >
+
+          <div class="flex items-center justify-between">
+
+            <span class="text-sm font-bold text-primary">
+              {service.number}
+            </span>
+
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-content">
+              →
+            </div>
+
+          </div>
+
+          <h3 class="mt-8 text-xl font-bold">
+            {service.title}
+          </h3>
+
+          <p class="mt-4 leading-7 text-base-content/60">
+            {service.description}
+          </p>
+
+        </article>
+      ))}
+
+    </div>
+
+  </Container>
+</section>

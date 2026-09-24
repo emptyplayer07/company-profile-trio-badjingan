@@ -1,0 +1,54 @@
+---
+import Container from "../common/Container.astro";
+import Button from "../common/Button.astro";
+---
+
+<section id="contact" class="py-24 lg:py-32">
+  <Container>
+
+    <div class="relative overflow-hidden rounded-[2.5rem] bg-primary px-8 py-16 text-center lg:px-20 lg:py-24">
+
+      <div class="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white/10"></div>
+
+      <div class="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-white/10"></div>
+
+      <div class="relative mx-auto max-w-3xl">
+
+        <span class="text-sm font-semibold uppercase tracking-widest text-primary-content/70">
+          Let's Work Together
+        </span>
+
+        <h2 class="mt-5 text-4xl font-bold text-primary-content lg:text-6xl">
+          Have an idea?
+          Let's build it together.
+        </h2>
+
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-primary-content/70">
+          Tell us about your project and discover how technology
+          can help your business grow.
+        </p>
+
+        <div class="mt-9 flex flex-wrap justify-center gap-4">
+
+          <a
+            href="mailto:hello@example.com"
+            class="btn rounded-full border-0 bg-white px-8 text-primary hover:bg-white/90"
+          >
+            Contact Us
+          </a>
+
+          <a
+            href="tel:+620000000000"
+            class="btn btn-outline rounded-full border-white/40 px-8 text-white hover:bg-white hover:text-primary"
+          >
+            Call Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </Container>
+</section>

@@ -1,0 +1,29 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "outline";
+}
+
+const {
+  href = "#",
+  variant = "primary"
+} = Astro.props;
+---
+
+{
+  variant === "primary" ? (
+    <a
+      href={href}
+      class="btn btn-primary rounded-full px-7"
+    >
+      <slot />
+    </a>
+  ) : (
+    <a
+      href={href}
+      class="btn btn-outline btn-primary rounded-full px-7"
+    >
+      <slot />
+    </a>
+  )
+}

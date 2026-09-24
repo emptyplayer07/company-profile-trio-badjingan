@@ -1,0 +1,58 @@
+---
+import Container from "../common/Container.astro";
+---
+
+<footer class="border-t border-base-200 bg-base-100">
+  <Container>
+
+    <div class="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+
+      <div class="lg:col-span-2">
+
+        <a
+          href="/"
+          class="text-xl font-bold"
+        >
+          IT Solution
+        </a>
+
+        <p class="mt-4 max-w-md leading-7 text-base-content/60">
+          We build digital products and technology solutions
+          that help businesses grow and adapt to the future.
+        </p>
+
+      </div>
+
+      <div>
+        <h3 class="font-bold">
+          Navigation
+        </h3>
+
+        <nav class="mt-4 flex flex-col gap-3 text-sm text-base-content/60">
+          <a href="#home" class="hover:text-primary">Home</a>
+          <a href="#about" class="hover:text-primary">About</a>
+          <a href="#services" class="hover:text-primary">Services</a>
+          <a href="#projects" class="hover:text-primary">Projects</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="font-bold">
+          Contact
+        </h3>
+
+        <div class="mt-4 space-y-3 text-sm text-base-content/60">
+          <p>hello@example.com</p>
+          <p>+62 812 3456 7890</p>
+          <p>Jakarta, Indonesia</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-base-200 py-6 text-center text-sm text-base-content/50">
+      © {new Date().getFullYear()} IT Solution. All rights reserved.
+    </div>
+
+  </Container>
+</footer>
