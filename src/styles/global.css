@@ -17,10 +17,11 @@ html {
 }
 
 body {
+  user-select: text;
   min-width: 320px;
 }
 
 ::selection {
-  background: oklch(var(--p));
-  color: oklch(var(--pc));
+  background-color: #4f46e5;
+  color: white;
 }
