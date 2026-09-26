@@ -1,180 +1,68 @@
 ---
-import Container from "../common/Container.astro";
-import HeaderLink from "./HeaderLink.astro";
+import HeaderLink from './HeaderLink.astro';
 ---
 
-<header
-  class="
-    sticky
-    top-0
-    z-50
-    border-b
-    border-slate-200
-    bg-white/90
-    backdrop-blur-md
-  "
->
-  <Container>
-    <div class="navbar min-h-20 px-0">
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+  <div class="flex min-h-20 w-full items-center justify-between px-8 lg:px-16 xl:px-24">
 
-      <!-- LOGO -->
-      <div class="navbar-start">
-        <a href="/" class="flex items-center gap-3">
-          <div
-            class="
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              rounded-xl
-              bg-indigo-500
-              font-bold
-              text-white
-            "
-          >
-            IT
-          </div>
-
-          <div>
-            <p class="text-lg font-bold leading-none text-slate-900">
-              IT Solution
-            </p>
-
-            <span class="text-xs text-slate-500">
-              Technology Partner
-            </span>
-          </div>
-        </a>
+    <!-- LOGO -->
+    <a href="/" class="flex shrink-0 items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-bold text-white">
+        JDC
       </div>
 
-      <!-- NAVIGATION -->
-      <div class="navbar-end">
+      <div>
+        <p class="text-lg font-bold leading-none text-slate-900">
+          TrioBadjingan
+        </p>
 
-        <nav class="hidden items-center gap-7 lg:flex">
+        <span class="text-xs text-slate-500">
+          IT Solution
+        </span>
+      </div>
+    </a>
 
-          <HeaderLink href="#home">
-            Home
-          </HeaderLink>
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="hidden items-center gap-7 lg:flex">
+      <HeaderLink href="#home">Home</HeaderLink>
+      <HeaderLink href="#about">About</HeaderLink>
+      <HeaderLink href="#services">Services</HeaderLink>
+      <HeaderLink href="#projects">Projects</HeaderLink>
+      <HeaderLink href="#contact">Contact</HeaderLink>
 
-          <HeaderLink href="#about">
-            About
-          </HeaderLink>
+      <a
+        href="#contact"
+        class="ml-2 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:brightness-80"
+      >
+        Let's Talk
+      </a>
+    </nav>
 
-          <HeaderLink href="#services">
-            Services
-          </HeaderLink>
+    <!-- MOBILE NAVIGATION -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <label tabindex="0" class="btn btn-ghost btn-circle text-slate-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </label>
 
-          <HeaderLink href="#projects">
-            Projects
-          </HeaderLink>
+      <ul
+        tabindex="0"
+        class="menu dropdown-content z-1 mt-3 w-52 rounded-2xl border border-slate-200 bg-white p-3 text-slate-700 shadow-xl"
+      >
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
 
-          <HeaderLink href="#contact">
-            Contact
-          </HeaderLink>
-
-          <a
-            href="#contact"
-            class="
-              ml-2
-              inline-flex
-              items-center
-              rounded-full
-              bg-indigo-500
-              px-6
-              py-3
-              text-sm
-              font-semibold
-              text-white
-              transition
-              hover:bg-indigo-600
-            "
-          >
+        <li class="mt-2">
+          <a href="#contact" class="justify-center rounded-full bg-primary font-semibold text-white hover:brightness-90">
             Let's Talk
           </a>
-
-        </nav>
-
-        <!-- MOBILE MENU -->
-        <div class="dropdown dropdown-end lg:hidden">
-
-          <label
-            tabindex="0"
-            class="btn btn-ghost btn-circle text-slate-700"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.8"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </label>
-
-          <ul
-            tabindex="0"
-            class="
-              menu
-              dropdown-content
-              z-1
-              mt-3
-              w-52
-              rounded-2xl
-              border
-              border-slate-200
-              bg-white
-              p-3
-              text-slate-700
-              shadow-xl
-            "
-          >
-            <li>
-              <a href="#home">Home</a>
-            </li>
-
-            <li>
-              <a href="#about">About</a>
-            </li>
-
-            <li>
-              <a href="#services">Services</a>
-            </li>
-
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-
-            <li class="mt-2">
-              <a
-                href="#contact"
-                class="
-                  justify-center
-                  rounded-full
-                  bg-indigo-500
-                  font-semibold
-                  text-white
-                  hover:bg-indigo-600
-                "
-              >
-                Let's Talk
-              </a>
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
+        </li>
+      </ul>
     </div>
-  </Container>
+
+  </div>
 </header>
