@@ -1,5 +1,6 @@
 ---
 import Container from "../common/Container.astro";
+import {SITE_TITLE} from "../../const";
 ---
 
 <footer class="border-t border-base-200 bg-base-100">
@@ -13,7 +14,7 @@ import Container from "../common/Container.astro";
           href="/"
           class="text-xl font-bold"
         >
-          IT Solution
+          {SITE_TITLE}
         </a>
 
         <p class="mt-4 max-w-md leading-7 text-base-content/60">
@@ -43,16 +44,15 @@ import Container from "../common/Container.astro";
 
         <div class="mt-4 space-y-3 text-sm text-base-content/60">
           <p>hello@example.com</p>
-          <p>+62 812 3456 7890</p>
+          <p>+62 111 1111 1111</p>
           <p>Jakarta, Indonesia</p>
         </div>
       </div>
 
     </div>
-
-    <div class="border-t border-base-200 py-6 text-center text-sm text-base-content/50">
-      © {new Date().getFullYear()} IT Solution. All rights reserved.
-    </div>
-
   </Container>
+   <!-- Full width -->
+  <div class="border-t border-base-200 py-6 text-center text-sm text-white bg-black">
+    © {new Date().getFullYear()} {SITE_TITLE}. All rights reserved.
+  </div>
 </footer>

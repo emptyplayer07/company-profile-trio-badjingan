@@ -2,65 +2,70 @@
 import Container from "../common/Container.astro";
 ---
 
-<section id="about" class="bg-base-200 py-24 lg:py-32">
+<section
+  id="about"
+  class="about-section bg-base-200 py-24 lg:py-32"
+>
   <Container>
-
     <div class="grid items-center gap-16 lg:grid-cols-2">
+      
+      <!-- Card -->
+      <div class="about-visual">
+        <div class="about-3d-card relative overflow-hidden rounded-4xl bg-primary p-8 lg:p-12">
+        
+          <!-- Decorative Circle -->
+          <div 
+            class="about-decoration absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10">
+          </div>
 
-      <!-- Visual -->
-      <div>
-        <div class="relative overflow-hidden rounded-[2rem] bg-primary p-8 lg:p-12">
-
-          <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10"></div>
-
-          <div class="relative">
+          <!-- Card Content -->
+          <div class="about-card-content relative">
             <span class="text-sm font-medium text-primary-content/70">
               ABOUT OUR COMPANY
             </span>
-
             <h2 class="mt-4 text-4xl font-bold leading-tight text-primary-content lg:text-5xl">
               Building The Future
               With Technology
             </h2>
-
             <p class="mt-6 leading-8 text-primary-content/70">
               We combine technology, creativity, and business
               understanding to create solutions that help
               organizations grow.
             </p>
           </div>
-
         </div>
       </div>
 
-      <!-- Content -->
-      <div>
-
-        <span class="text-sm font-semibold uppercase tracking-widest text-primary">
+      <!-- ABOUT CONTENT -->
+      <div class="about-content">
+        <!-- Label -->
+        <span class="text-lg font-bold uppercase tracking-widest text-primary">
           About Us
         </span>
 
+        <!-- Heading -->
         <h2 class="mt-4 text-4xl font-bold leading-tight lg:text-5xl">
           Your trusted technology partner
         </h2>
 
+        <!-- Description -->
         <p class="mt-6 leading-8 text-base-content/60">
           Our team delivers reliable and scalable technology
           solutions designed around your business needs.
         </p>
 
-        <div class="mt-8 space-y-5">
-
-          <div class="flex gap-4">
+        
+        <!-- FEATURES -->
+        <div class="about-features mt-8 space-y-5">
+          <!-- Feature 1 -->
+          <div class="about-feature flex gap-4">
             <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               ✓
             </div>
-
             <div>
               <h3 class="font-bold">
                 Experienced Team
               </h3>
-
               <p class="mt-1 text-sm text-base-content/60">
                 Skilled professionals with experience across
                 multiple technology fields.
@@ -68,16 +73,15 @@ import Container from "../common/Container.astro";
             </div>
           </div>
 
-          <div class="flex gap-4">
+          <!-- Feature 2 -->
+          <div class="about-feature flex gap-4">
             <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               ✓
             </div>
-
             <div>
               <h3 class="font-bold">
                 Modern Technology
               </h3>
-
               <p class="mt-1 text-sm text-base-content/60">
                 We use modern technologies to create efficient
                 and scalable solutions.
@@ -85,28 +89,204 @@ import Container from "../common/Container.astro";
             </div>
           </div>
 
-          <div class="flex gap-4">
+          <!-- Feature 3 -->
+          <div class="about-feature flex gap-4">
             <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               ✓
             </div>
-
             <div>
               <h3 class="font-bold">
                 Customer Focused
               </h3>
-
               <p class="mt-1 text-sm text-base-content/60">
                 Every solution is designed around the goals
                 and challenges of our clients.
               </p>
             </div>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </Container>
 </section>
+
+
+<style>
+/* ABOUT SECTION ANIMATION */
+  .about-visual {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition:
+      opacity 0.9s ease-out,
+      transform 0.9s ease-out;
+  }
+
+  .about-content {
+    opacity: 0;
+    transform: translateX(50px);
+    transition:
+      opacity 0.9s ease-out,
+      transform 0.9s ease-out;
+  }
+
+  .about-section.is-visible .about-visual {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .about-section.is-visible .about-content {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* 3D CARD */
+  .about-3d-card {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow:
+      0 20px 40px rgba(15, 23, 42, 0.12),
+      0 8px 15px rgba(15, 23, 42, 0.08);
+    transition:
+      transform 0.15s ease-out,
+      box-shadow 0.4s ease-out;
+    will-change: transform;
+  }
+
+     /* CARD HOVER */
+  .about-3d-card:hover {
+    box-shadow:
+      0 35px 70px rgba(15, 23, 42, 0.18),
+      0 15px 30px rgba(15, 23, 42, 0.10);
+  }
+
+     /* CARD CONTENT 3D */
+  .about-card-content {
+    transform: translateZ(35px);
+    transition:
+      transform 0.4s ease-out;
+    will-change: transform;
+  }
+
+
+  /* DECORATIVE CIRCLE */
+  .about-decoration {
+    transform: translateZ(10px);
+    transition:
+      transform 0.5s ease-out;
+  }
+
+  .about-3d-card:hover .about-decoration {
+    transform: translateZ(20px);
+  }
+
+  /* FEATURE ANIMATION */
+  .about-feature {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
+  }
+
+  .about-section.is-visible .about-feature:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+  }
+
+  .about-section.is-visible .about-feature:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+
+  .about-section.is-visible .about-feature:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.55s;
+  }
+
+  /* REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    .about-visual,
+    .about-content,
+    .about-feature {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .about-3d-card {
+      transform: none !important;
+      transition: none;
+    }
+
+    .about-card-content,
+    .about-decoration {
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+
+<script>
+  //  ABOUT SECTION OBSERVER
+  const aboutSection = document.querySelector(".about-section");
+  if (aboutSection) {
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(
+                "is-visible"
+              );
+              observer.unobserve(
+                entry.target
+              );
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+    observer.observe(aboutSection);
+  }
+
+  //  3D CARD MOUSE TILT
+   const card = document.querySelector<HTMLElement>(".about-3d-card");
+    if (card) {
+    card.addEventListener("mousemove", (event) => {
+      const rect = card.getBoundingClientRect();
+      
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -6;
+
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateZ(12px)
+      `;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(0deg)
+        rotateY(0deg)
+        translateZ(0)
+      `;
+    });
+  }
+</script>
